@@ -4,4 +4,26 @@
 
 <p><%= @picture.title %>, <%= @picture.artist %></p>
 <img src="<%= @picture.url %>">
+<p> 
+<% @picture.comments.each do |comment| %> 
+
+	<%= comment.commentor %>
+	<%= comment.body %>
+<% end %>
+</p>
+
+
+
+<%= form_for([@picture, @picture.comments.build]) do |f| %>
+	
+	<%= f.label :commentor %> <br/>
+	<%= f.text_field :commentor %>
+
+	<%= f.label :body %> <br/>
+	<%= f.text_field :body %>
+
+	<%= f.submit %>
+
+<% end %>
+
 
