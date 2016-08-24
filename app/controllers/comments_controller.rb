@@ -8,11 +8,6 @@ class CommentsController < ApplicationController
 		redirect_to picture_path(@picture)
 	end
 
-	def commentor
-	end
-
-	def body
-	end
 
 
 	private
